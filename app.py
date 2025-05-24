@@ -62,13 +62,13 @@ if st.sidebar.button('Predict'):
         # Sort models by weighted score (higher is better)
         sorted_models = sorted(model_scores.items(), key=lambda x: x[1], reverse=True)
         
-        return sorted_models[:2]  # Return top 2 models
+        return sorted_models[:5]  # Return top 2 models
 
     # Get top model recommendations
     top_models = recommend_top_models(data, input_data, weights)
 
     # Display recommended models
-    st.write('### Top 2 Recommended Models')
+    st.write('### Top 5 Recommended Models')
     for model, score in top_models:
         st.write(f"**{model}** with a score of {score:.2f}")
 else:
